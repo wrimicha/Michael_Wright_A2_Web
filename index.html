@@ -61,6 +61,8 @@
         /* move the alien */
         var currentX = e.target.style.left; 
         var currentY = e.target.style.top;
+        e.target.style.left = parseInt(Math.random() * browserHeight/2) + 'px';
+        e.target.style.top = parseInt(Math.random() * browserWidth/2) + 'px';
         });
     //13. Use the target property of the event object to change the coordinates. Ex. event.target.style.left = your coordinates calculation (again refer to steps 8 & 9)
     //14. Your coordinates calculation requires the variables created in step 11.
