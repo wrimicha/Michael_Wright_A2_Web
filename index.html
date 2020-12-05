@@ -21,9 +21,15 @@
       //2. Create an event handler on the window object for the mousemove event
       window.addEventListener('mousemove', (e) => {
           /* move spaceship */
-          var x = offsetX;
-          var y = offsetY;
+          var x = e.offsetX;
+          var y = e.offsetY;
           var spaceship = document.getElementById("spaceship1");
+          spaceship.style.left = x + 'px';
+          spaceship.style.top = y + 'px';
+          var currentX = spaceship.style.left + parseInt((Math.random() * 100 + x));
+          var currentY = spaceship.style.top  + parseInt((Math.random() * 100 + y));
+          spaceship.style.left = currentX + 'px';
+          spaceship.style.top = currentY + 'px';
         }); 
 
         //3. Inside of the callback function of this event handler, create offset distances for X and Y from the mouse
@@ -44,15 +50,15 @@
       
   
   //Move the alien away from the cursor when the cursor is moved close to the alien image.
-  //10. Get the image element & store it in a variable 
+  //10. Get the image element & store it in a variable
+  var alien = document.getElementById("alien");
+  var browserWidth = window.innerWidth;
+  var browserHeight = window.innerHeight;
 
-  //11. Get browser's current width & height to set a horizontal limit for the alien image & store in variables.
-
-
+  //11. Get browser's current width & height to set a horizontal limit for the alien image & store in variables.      
     //12. Attach an event handler to the alien image for the mouseover event
     //13. Use the target property of the event object to change the coordinates. Ex. event.target.style.left = your coordinates calculation (again refer to steps 8 & 9)
     //14. Your coordinates calculation requires the variables created in step 11.
-
       });
     </script>
   </body>
